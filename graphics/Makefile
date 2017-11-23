@@ -2,10 +2,7 @@ SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
 
 .PHONY : all
-all : libgraphics.a
+all : ${OBJS}
 
 include ../common.mk
-CRUFT += libgraphics.a
 
-libgraphics.a : ${OBJS}
-	ar rvs libgraphics.a ${OBJS}

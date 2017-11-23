@@ -5,24 +5,27 @@
 SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
 
+ifndef LIBS_ROOT
+	export LIBS_ROOT = $(shell echo "`pwd`/libs")
+endif
+
 .PHONY : all
-all : libmath2 libgraphics main
+all : libs main
 
 include common.mk
 CRUFT += main
 
-.PHONY: libmath2
-libmath2:
-	$(MAKE) -C math
-
-.PHONY: libgraphics
-libgraphics:
+.PHONY : libs
+libs :
+	${MAKE} -C math
 	${MAKE} -C graphics
+	${MAKE} -C libs
 
 main : $(OBJS)
-	$(CC) $? -o $@ -L ${MATH_LIB} -lmath2 -L ${GRAPHICS_LIB} -lgraphics
+	$(CC) $? -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
 
-.PHONY :clean
+.PHONY : clean
 clean : decruft
+	${MAKE} -C libs decruft
 	$(MAKE) -C math decruft
 	${MAKE} -C graphics decruft
