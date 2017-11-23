@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main(int argc, char *argv[argc]) {
+int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
   cout << "Hello world from main" << endl;
   util::console c("runner");
   c.print("writing using console");
