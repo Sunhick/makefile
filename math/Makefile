@@ -1,6 +1,6 @@
 SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
-CRUFT += libmath2.a
+
 
 # for debugging uncomment below lines
 # $(info srcs=$(SRCS))
@@ -9,6 +9,7 @@ CRUFT += libmath2.a
 all: libmath2.a
 
 include ../common.mk
+CRUFT += libmath2.a
 
 libmath2.a : ${OBJS}
 	$(AR) rvs libmath2.a $(OBJS)
