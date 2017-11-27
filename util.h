@@ -1,3 +1,8 @@
+/**
+ * util.h
+ *
+ * Copyright (c) 2017 Sunil
+ */
 #pragma once
 
 #include <iostream>

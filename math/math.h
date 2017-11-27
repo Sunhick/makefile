@@ -1,3 +1,8 @@
+/**
+ * math/math.h
+ *
+ * Copyright (c) 2017 Sunil
+ */
 #pragma once
 
 namespace math {

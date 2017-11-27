@@ -1,6 +1,8 @@
-# 
-# make file
 #
+# Makefile - building the root project 
+#
+# Copyright (c) 2017 Sunil
+# 
 
 SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
@@ -17,15 +19,16 @@ CRUFT += main
 
 .PHONY : libs
 libs :
-	${MAKE} -C math
-	${MAKE} -C graphics
-	${MAKE} -C libs
+	$(Q) ${MAKE} -C math
+	$(Q) ${MAKE} -C graphics
+	$(Q) ${MAKE} -C libs
 
 main : $(OBJS)
-	$(CC) $? -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
+	$(E) "  LINK - " $@
+	$(Q) $(CC) $? -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
 
 .PHONY : clean
 clean : decruft
-	${MAKE} -C libs decruft
-	$(MAKE) -C math decruft
-	${MAKE} -C graphics decruft
+	$(Q) ${MAKE} -C libs decruft
+	$(Q) $(MAKE) -C math decruft
+	$(Q) ${MAKE} -C graphics decruft

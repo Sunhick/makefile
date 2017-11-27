@@ -1,3 +1,9 @@
+#
+# Makefile - for making math
+#
+# Copyright (c) 2017 Sunil
+# 
+
 SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
 

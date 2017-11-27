@@ -1,3 +1,8 @@
+/**
+ * util.cc
+ *
+ * Copyright (c) 2017 Sunil
+ */
 #include "util.h"
 
 using namespace util;

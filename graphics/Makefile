@@ -1,3 +1,9 @@
+#
+# Makefile - for building graphics
+#
+# Copyright (c) 2017 Sunil
+#
+
 SRCS=$(wildcard *.cc)
 OBJS=$(SRCS:.cc=.o)
 
