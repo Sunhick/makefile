@@ -8,8 +8,9 @@
 #include <iostream>
 
 using std::cout;
+using std::hex;
 using std::endl;
 
 void graphics_init() {
-  cout << "graphics init" << endl;
+  cout << "graphics init addr: " << hex << vga_address << endl;
 }

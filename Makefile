@@ -25,10 +25,15 @@ libs :
 
 main : $(OBJS)
 	$(E) "  LINK - " $@
-	$(Q) $(CC) $? -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
+	$(Q) $(CC) $^ -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
 
 .PHONY : clean
 clean : decruft
 	$(Q) ${MAKE} -C libs decruft
 	$(Q) $(MAKE) -C math decruft
 	$(Q) ${MAKE} -C graphics decruft
+
+.PHONY : depend
+depend: deps
+	$(Q) ${MAKE} -C math deps
+	$(Q) ${MAKE} -C graphics deps

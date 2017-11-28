@@ -18,6 +18,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
   c.print("writing using console");
 
   graphics_init();
+  std::cout << "Graphics initialized @ " << std::hex << vga_address << "\n";
 
   math::adder a;
   cout << "10 + 90 = " << a.add(10, 90) << endl;

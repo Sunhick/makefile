@@ -16,7 +16,10 @@ CFLAGS = -std=c++1z -fno-inline -Wall -Werror -Wextra -Wfloat-equal -Wshadow \
 	 -Wunused-value -Wno-deprecated -g -O0
 LDFLAGS =
 
-CRUFT = $(wildcard *.c~ *.cc~ *.cpp~ *.h~ *.c.BAK *.h.BAK *.o *.a *.so *.dylib *.bc)
+CRUFT = $(wildcard *.c~ *.cc~ *.cpp~ *.h~ *.c.BAK *.h.BAK *.o *.a *.so *.dylib *.bc .depends)
+
+# include auto generated header deps
+-include .depends
 
 %.o : %.cc
 	@echo "  CC - " $@
@@ -25,3 +28,9 @@ CRUFT = $(wildcard *.c~ *.cc~ *.cpp~ *.h~ *.c.BAK *.h.BAK *.o *.a *.so *.dylib *
 .PHONY : decruft
 decruft :
 	$(Q) $(RM) -- ${CRUFT}
+
+.PHONY : deps
+deps:
+	$(Q) for i in *.cc; do $(CC) ${CFLAGS} -MMD -MP -MF $$i.dep -c $$i; done
+	$(Q) cat *.dep > .depends
+	$(Q) -$(RM) -- *.dep
