@@ -5,8 +5,10 @@
  */
 #include "./math.h"
 
-using math;
+namespace math {
 
 int adder::add(int a, int b) {
   return a + b;
 }
+
+}  // namespace math

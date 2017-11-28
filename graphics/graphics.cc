@@ -8,6 +8,7 @@
 #include <iostream>
 
 using std::cout;
+using std::endl;
 
 void graphics_init() {
   cout << "graphics init" << endl;

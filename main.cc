@@ -10,6 +10,7 @@
 #include "graphics/graphics.h"
 
 using std::cout;
+using std::endl;
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
   cout << "Hello world from main" << endl;

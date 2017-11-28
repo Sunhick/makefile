@@ -5,11 +5,18 @@
  */
 #include "./util.h"
 
-using util;
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+namespace util {
 
 console::console(string name) : moniker(name) { }
 
 void console::print(string msg) {
   cout << moniker << " -- " << msg << endl;
 }
+
+}  // namespace util
 
