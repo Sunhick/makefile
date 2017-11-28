@@ -3,9 +3,9 @@
  *
  * Copyright (c) 2017 Sunil
  */
-#include "util.h"
+#include "./util.h"
 
-using namespace util;
+using util;
 
 console::console(string name) : moniker(name) { }
 

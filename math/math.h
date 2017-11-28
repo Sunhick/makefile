@@ -6,8 +6,10 @@
 #pragma once
 
 namespace math {
-  class adder {
-  public:
-    int add(int a, int b);
-  };
-} // namespace
+
+class adder {
+ public:
+  int add(int a, int b);
+};  // class adder
+
+}  // namespace math

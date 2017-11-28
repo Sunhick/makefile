@@ -8,15 +8,18 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::string;
 
 namespace util {
-  // console printing functions
-  class console {
-  private:
-    string moniker;
-  public:
-    console(string name);
-    void print(string msg);
-  };
-} // namespace
+
+// console printing functions
+class console {
+ private:
+  string moniker;
+
+ public:
+  explicit console(string name);
+  void print(string msg);
+};
+
+}  // namespace util

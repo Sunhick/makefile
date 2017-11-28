@@ -3,9 +3,9 @@
  *
  * Copyright (c) 2017 Sunil
  */
-#include "math.h"
+#include "./math.h"
 
-using namespace math;
+using math;
 
 int adder::add(int a, int b) {
   return a + b;
