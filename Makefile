@@ -12,7 +12,7 @@ ifndef LIBS_ROOT
 endif
 
 .PHONY : all
-all : libs main
+all : libs main depend
 
 include common.mk
 CRUFT += main
