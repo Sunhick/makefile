@@ -24,7 +24,7 @@ CRUFT = $(wildcard *.c~ *.cc~ *.cpp~ *.h~ *.c.BAK *.h.BAK *.o *.a *.so *.dylib *
 
 %.o : %.cc
 	$(E) "  CC - " $@
-	$(Q) $(CC) -c $< ${CFLAGS}
+	$(Q) $(CC) -c $< ${CFLAGS} ${LDFLAGS}
 
 .PHONY : decruft
 decruft :

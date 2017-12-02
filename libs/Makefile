@@ -23,8 +23,12 @@ libmath2.a : ${MATH_OBJS}
 libgraphics.a : ${GRAPHICS_OBJS}
 	$(call make_lib, $@, $^)
 
-libconfig2.a : ${CONFIG_OBJS}
-	$(call make_lib, $@, $^, ${CONFIG_LDFLAGS})
+libconfig2.a : link
+	$(call make_lib, $@, combined.o)
+
+.PHONY : link
+link : ${CONFIG_OBJS}
+	$(LD) -r -o combined.o ${CONFIG_OBJS} ../libs/lib/libconfig.a
 
 .PHONY : clean
 clean : decruft
