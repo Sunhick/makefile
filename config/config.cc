@@ -24,8 +24,8 @@ Config::Config() {
 Config::~Config() {}
 
 string Config::getName() {
+  const char *base;
   try {
-    const char *base;
     config_lookup_string(cf, "author", &base);
   } catch (...) {
     cout << "Error in reading author" << endl;
