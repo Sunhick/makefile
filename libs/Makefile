@@ -6,17 +6,21 @@
 
 MATH_OBJS := $(wildcard ../math/*.o)
 GRAPHICS_OBJS := $(wildcard ../graphics/*.o)
+CONFIG_OBJS := $(wildcard ../config/*.o)
 
 .PHONY : all
-all : libmath2.a libgraphics.a
+all : libmath2.a libgraphics.a libconfig2.a
 
 include ../common.mk
-CRUFT += libmath2.a libgraphics.a
+CRUFT += libmath2.a libgraphics.a libconfig2.a
 
 libmath2.a : ${MATH_OBJS}
 	$(call make_lib, $@, $^)
 
 libgraphics.a : ${GRAPHICS_OBJS}
+	$(call make_lib, $@, $^)
+
+libconfig2.a : ${CONFIG_OBJS}
 	$(call make_lib, $@, $^)
 
 # Make static library from arguments

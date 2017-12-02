@@ -22,10 +22,11 @@ libs :
 	$(Q) ${MAKE} -C math
 	$(Q) ${MAKE} -C graphics
 	$(Q) ${MAKE} -C libs
+	$(Q) ${MAKE} -C config
 
 main : $(OBJS)
 	$(E) "  LINK - " $@
-	$(Q) $(CC) $^ -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics
+	$(Q) $(CC) $^ -o $@ -L ${LIBS_ROOT} -lmath2 -lgraphics -lconfig2
 
 .PHONY : clean
 clean : decruft

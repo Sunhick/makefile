@@ -8,9 +8,11 @@
 #include "./util.h"
 #include "graphics/graphics.h"
 #include "math/math.h"
+#include "config/config.h"
 
 using std::cout;
 using std::endl;
+using config::Config;
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
   cout << "Hello world from main" << endl;
@@ -22,5 +24,9 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
 
   math::adder a;
   cout << "10 + 90 = " << a.add(10, 90) << endl;
+
+  Config cfg;
+  cout << cfg.getName() << endl;
+  
   return 0;
 }
