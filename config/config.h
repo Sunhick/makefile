@@ -10,13 +10,13 @@
 #include <string>
 #include <libconfig.h>
 
-using std::string
+using std::string;
 
 namespace config {
 
 class Config {
  private:
-  config_t cfg;
+  config_t cfg, *cf;
   
  public:
   Config();

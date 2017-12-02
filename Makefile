@@ -12,7 +12,7 @@ ifndef LIBS_ROOT
 endif
 
 .PHONY : all
-all : libs main depend
+all : sub-modules libs main depend
 
 include common.mk
 CRUFT += main
@@ -21,8 +21,12 @@ CRUFT += main
 libs :
 	$(Q) ${MAKE} -C math
 	$(Q) ${MAKE} -C graphics
-	$(Q) ${MAKE} -C libs
 	$(Q) ${MAKE} -C config
+	$(Q) ${MAKE} -C libs
+
+.PHONY : sub-modules
+sub-modules :
+	${MAKE} -C modules
 
 main : $(OBJS)
 	$(E) "  LINK - " $@
@@ -30,9 +34,10 @@ main : $(OBJS)
 
 .PHONY : clean
 clean : decruft
-	$(Q) ${MAKE} -C libs decruft
+	$(Q) ${MAKE} -C libs clean
 	$(Q) $(MAKE) -C math decruft
 	$(Q) ${MAKE} -C graphics decruft
+	$(Q) ${MAKE} -C modules clean
 
 .PHONY : depend
 depend: deps

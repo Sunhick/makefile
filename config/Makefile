@@ -11,3 +11,5 @@ OBJS=$(SRCS:.cc=.o)
 all : ${OBJS}
 
 include ../common.mk
+
+CFLAGS += -I ../libs/include/
