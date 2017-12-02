@@ -41,3 +41,5 @@
 
 # Executable
 main
+/libs/.DS_Store
+/libs/libconfig/

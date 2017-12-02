@@ -12,8 +12,6 @@ Config::Config() {}
 
 Config::~Config() {}
 
-string Config::getName() {
-  return "<default>";
-}
+string Config::getName() { return "<default>"; }
 
 }  // namespace config

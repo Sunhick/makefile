@@ -8,12 +8,16 @@
 #define CONFIG_H
 
 #include <string>
+#include <libconfig.h>
 
-using std::string;
+using std::string
 
 namespace config {
 
 class Config {
+ private:
+  config_t cfg;
+  
  public:
   Config();
   virtual ~Config();
