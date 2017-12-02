@@ -1,7 +1,8 @@
-# makefile
-make file tutorial
+# Makefile
+Make file tutorial
 
-# Todo
-* Auto dependency in Make files
-* makedepend
-* Beautify output. By default make spits out entire commands however its not the case in kernel builds or uemacs.
+# Features
+* Modularize makefiles and putting common stuff in a separate makefile.
+* Recursive makefiles
+* Auto dependency in make file. ```make depends```
+* git submodule for libconfig. ```make -C modules```. submodules are automatically build and installed to libs folder when ```make``` is issued on the root folder.
