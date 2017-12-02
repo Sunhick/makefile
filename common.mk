@@ -22,7 +22,7 @@ CRUFT = $(wildcard *.c~ *.cc~ *.cpp~ *.h~ *.c.BAK *.h.BAK *.o *.a *.so *.dylib *
 -include .depends
 
 %.o : %.cc
-	@echo "  CC - " $@
+	$(E) "  CC - " $@
 	$(Q) $(CC) -c $< ${CFLAGS}
 
 .PHONY : decruft

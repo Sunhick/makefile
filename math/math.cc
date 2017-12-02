@@ -7,8 +7,6 @@
 
 namespace math {
 
-int adder::add(int a, int b) {
-  return a + b;
-}
+int adder::add(int a, int b) { return a + b; }
 
 }  // namespace math

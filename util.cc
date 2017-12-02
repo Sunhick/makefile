@@ -12,11 +12,8 @@ using std::endl;
 
 namespace util {
 
-console::console(string name) : moniker(name) { }
+console::console(string name) : moniker(name) {}
 
-void console::print(string msg) {
-  cout << moniker << " -- " << msg << endl;
-}
+void console::print(string msg) { cout << moniker << " -- " << msg << endl; }
 
 }  // namespace util
-

@@ -6,8 +6,8 @@
 #include <iostream>
 
 #include "./util.h"
-#include "math/math.h"
 #include "graphics/graphics.h"
+#include "math/math.h"
 
 using std::cout;
 using std::endl;
