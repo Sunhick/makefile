@@ -6,9 +6,9 @@
 #include <iostream>
 
 #include "./util.h"
+#include "config/config.h"
 #include "graphics/graphics.h"
 #include "math/math.h"
-#include "config/config.h"
 
 using std::cout;
 using std::endl;
@@ -27,6 +27,6 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
 
   Config cfg;
   cout << cfg.getName() << endl;
-  
+
   return 0;
 }
